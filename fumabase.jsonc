@@ -39,7 +39,8 @@
     "domains": [
         "morse-grsoi0u1.localhost",
         "morse-grsoi0u1.fumabase.com",
-        "somethingxxxxxx.localhostxx"
+        "somethingxxxxxx.localhostxx",
+        "xxxxsomenewdomainxx.localhost"
     ],
     "favicon": {
         "dark": "/favicon.svg",
