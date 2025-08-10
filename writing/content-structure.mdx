@@ -1,0 +1,109 @@
+---
+title: 'Content Structure That Works'
+description: 'Learn how to organize documentation that guides users to success with clear hierarchy and logical flow.'
+---
+
+# Content Structure That Works
+
+Great documentation isn't just about having the right information—it's about organizing that information so users can find and understand it quickly.
+
+## Start with User Intent
+
+Before writing a single word, understand what your users are trying to accomplish. Are they trying to solve a problem, learn a concept, or complete a task?
+
+<Tip>
+Always lead with the outcome. Tell users what they'll achieve before explaining how to do it.
+</Tip>
+
+### The Inverted Pyramid Approach
+
+Structure your content like a news article—most important information first, supporting details after.
+
+<Steps>
+<Step title="Lead with the outcome">
+    Start each section by describing what the user will accomplish or learn.
+
+    ```markdown
+    # Setting Up Authentication
+
+    By the end of this guide, you'll have secure API authentication
+    working in your application with proper error handling.
+    ```
+</Step>
+
+<Step title="Provide essential context">
+    Give users the background they need to understand the instructions.
+
+    <Note>
+    Include prerequisites, assumptions, and any important warnings upfront.
+    </Note>
+</Step>
+
+<Step title="Detail the implementation">
+    Break down the actual steps, code examples, and configuration details.
+</Step>
+</Steps>
+
+## Progressive Information Disclosure
+
+Reveal complexity gradually. Start with the simplest case that works, then build up to more sophisticated scenarios.
+
+<Tabs>
+<Tab title="Basic Example">
+```javascript
+// Start with the minimal working example
+const response = await fetch('/api/users');
+const users = await response.json();
+```
+</Tab>
+
+<Tab title="With Error Handling">
+```javascript
+// Then show error handling
+try {
+    const response = await fetch('/api/users');
+    if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const users = await response.json();
+} catch (error) {
+    console.error('Failed to fetch users:', error);
+}
+```
+</Tab>
+
+<Tab title="Production Ready">
+```javascript
+// Finally, show production-ready implementation
+const fetchUsers = async (options = {}) => {
+    const { timeout = 5000, retries = 3 } = options;
+
+    for (let attempt = 1; attempt <= retries; attempt++) {
+        try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), timeout);
+
+            const response = await fetch('/api/users', {
+                signal: controller.signal,
+                headers: {
+                    'Authorization': `Bearer ${getToken()}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            clearTimeout(timeoutId);
+
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+
+            return await response.json();
+        } catch (error) {
+            if (attempt === retries) throw error;
+            await new Promise(resolve => setTimeout(resolve, 1000 * attempt));
+        }
+    }
+};
+```
+</Tab>
+</Tabs>
