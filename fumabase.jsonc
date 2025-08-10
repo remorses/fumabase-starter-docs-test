@@ -1,49 +1,49 @@
 {
-  "logo": {
-    "text": "ciao"
-  },
-  "name": "fumabase-starter",
-  "footer": {
-    "links": [
-      {
-        "items": [
-          {
-            "href": "https://fumabase.com",
-            "label": "Fumabase"
-          }
+    "logo": {
+        "text": "ciao"
+    },
+    "name": "fumabase-starter",
+    "footer": {
+        "links": [
+            {
+                "items": [
+                    {
+                        "href": "https://fumabase.com",
+                        "label": "Fumabase"
+                    }
+                ],
+                "header": "Documentation"
+            }
         ],
-        "header": "Documentation"
-      }
+        "socials": {
+            "github": "https://github.com/remorses",
+            "twitter": "https://x.com/__morse"
+        }
+    },
+    "navbar": {
+        "links": [
+            {
+                "href": "https://fumabase.com",
+                "icon": "document",
+                "label": "Home"
+            }
+        ],
+        "primary": {
+            "href": "https://fumabase.com/login",
+            "type": "button",
+            "label": "Get Started"
+        }
+    },
+    "siteId": "01K27VHSBCC92EF50H4PFYQ2V2",
+    "$schema": "https://fumabase.com/fumabase.json",
+    "domains": [
+        "morse-grsoi0u1.localhost",
+        "morse-grsoi0u1.fumabase.com",
+        "somethingxxxxxx.localhostxx"
     ],
-    "socials": {
-      "github": "https://github.com/remorses",
-      "twitter": "https://x.com/__morse"
-    }
-  },
-  "navbar": {
-    "links": [
-      {
-        "href": "https://fumabase.com",
-        "icon": "document",
-        "label": "Home"
-      }
-    ],
-    "primary": {
-      "href": "https://fumabase.com/login",
-      "type": "button",
-      "label": "Get Started"
-    }
-  },
-  "siteId": "01K27VHSBCC92EF50H4PFYQ2V2",
-  "$schema": "https://fumabase.com/fumabase.json",
-  "domains": [
-    "morse-grsoi0u1.localhost",
-    "morse-grsoi0u1.fumabase.com",
-    "somethingxxxxxx.localhost"
-  ],
-  "favicon": {
-    "dark": "/favicon.svg",
-    "light": "/favicon.svg"
-  },
-  "hideSidebar": false
+    "favicon": {
+        "dark": "/favicon.svg",
+        "light": "/favicon.svg"
+    },
+    "hideSidebar": false
 }
